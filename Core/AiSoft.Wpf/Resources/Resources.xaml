@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:awr="clr-namespace:AiSoft.Wpf.Resources"
+                    xmlns:awc="clr-namespace:AiSoft.Wpf.Converters">
+
+    <awc:TrueToVisibleConverter x:Key="{x:Static awr:Converters.TrueToVisibleConverter}"/>
+    <awc:TrueToHiddenConverter x:Key="{x:Static awr:Converters.TrueToHiddenConverter}"/>
+    <awc:TrueToCollapsedConverter x:Key="{x:Static awr:Converters.TrueToCollapsedConverter}"/>
+    <awc:EnumToDescriptionConverter x:Key="{x:Static awr:Converters.EnumToDescriptionConverter}"/>
+    <awc:InverseBooleanConverter x:Key="{x:Static awr:Converters.InverseBooleanConverter}"/>
+    <awc:PrecisionConverter x:Key="{x:Static awr:Converters.PrecisionConverter}"/>
+    <awc:PrecisionNumberConverter x:Key="{x:Static awr:Converters.PrecisionNumberConverter}"/>
+    <awc:StringToMaskConverter x:Key="{x:Static awr:Converters.StringToMaskConverter}"/>
+
+</ResourceDictionary>
