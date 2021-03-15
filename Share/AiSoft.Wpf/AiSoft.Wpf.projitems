@@ -12,6 +12,7 @@
     <None Include="$(MSBuildThisFileDirectory)Utils\CustomException.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\WinHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\FlashWindow.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\SoundPlay.cs" />
   </ItemGroup>
