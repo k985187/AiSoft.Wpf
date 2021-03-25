@@ -2,15 +2,14 @@
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
-using AiSoft.Tools.Extensions;
 
 namespace AiSoft.Wpf.Converters
 {
-    public class EnumToDescriptionConverter : IValueConverter
+    public class StringToBoolConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value is Enum val ? val.GetDescription() : value;
+            return value is string val && !string.IsNullOrWhiteSpace(val);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

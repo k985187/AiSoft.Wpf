@@ -5,11 +5,11 @@ using System.Windows.Data;
 
 namespace AiSoft.Wpf.Converters
 {
-    public class BoolToVisibleConverter : IValueConverter
+    public class ObjectToVisibleConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (value as bool?) == true ? Visibility.Visible : Visibility.Collapsed;
+            return value != null ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -18,11 +18,11 @@ namespace AiSoft.Wpf.Converters
         }
     }
 
-    public class BoolToHiddenConverter : IValueConverter
+    public class ObjectToHiddenConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (value as bool?) == true ? Visibility.Hidden : Visibility.Visible;
+            return value != null ? Visibility.Hidden : Visibility.Visible;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -31,11 +31,11 @@ namespace AiSoft.Wpf.Converters
         }
     }
 
-    public class BoolToCollapsedConverter : IValueConverter
+    public class ObjectToCollapsedConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (value as bool?) == true ? Visibility.Collapsed : Visibility.Visible;
+            return value != null ? Visibility.Collapsed : Visibility.Visible;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

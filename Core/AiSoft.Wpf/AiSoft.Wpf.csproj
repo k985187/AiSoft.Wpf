@@ -4,14 +4,14 @@
     <TargetFrameworks>net45;netcoreapp3.1;net5.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>1.0.0.1</Version>
+    <Version>1.0.0.2</Version>
     <Copyright>Copyright © AiSoft 2021</Copyright>
     <Company>AiSoft</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AiSoft.Tools" Version="1.0.2.3" />
+    <PackageReference Include="AiSoft.Tools" Version="1.0.2.4" />
   </ItemGroup>
 
   <ItemGroup>

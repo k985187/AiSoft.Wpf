@@ -3,13 +3,29 @@
                     xmlns:awr="clr-namespace:AiSoft.Wpf.Resources"
                     xmlns:awc="clr-namespace:AiSoft.Wpf.Converters">
 
-    <awc:TrueToVisibleConverter x:Key="{x:Static awr:Converters.TrueToVisibleConverter}"/>
-    <awc:TrueToHiddenConverter x:Key="{x:Static awr:Converters.TrueToHiddenConverter}"/>
-    <awc:TrueToCollapsedConverter x:Key="{x:Static awr:Converters.TrueToCollapsedConverter}"/>
+    <awc:BoolToVisibleConverter x:Key="{x:Static awr:Converters.BoolToVisibleConverter}"/>
+    <awc:BoolToHiddenConverter x:Key="{x:Static awr:Converters.BoolToHiddenConverter}"/>
+    <awc:BoolToCollapsedConverter x:Key="{x:Static awr:Converters.BoolToCollapsedConverter}"/>
+
     <awc:EnumToDescriptionConverter x:Key="{x:Static awr:Converters.EnumToDescriptionConverter}"/>
+
     <awc:InverseBooleanConverter x:Key="{x:Static awr:Converters.InverseBooleanConverter}"/>
+
+    <awc:ObjectToBoolConverter x:Key="{x:Static awr:Converters.ObjectToBoolConverter}"/>
+
+    <awc:ObjectToVisibleConverter x:Key="{x:Static awr:Converters.ObjectToVisibleConverter}"/>
+    <awc:ObjectToHiddenConverter x:Key="{x:Static awr:Converters.ObjectToHiddenConverter}"/>
+    <awc:ObjectToCollapsedConverter x:Key="{x:Static awr:Converters.ObjectToCollapsedConverter}"/>
+
     <awc:PrecisionConverter x:Key="{x:Static awr:Converters.PrecisionConverter}"/>
     <awc:PrecisionNumberConverter x:Key="{x:Static awr:Converters.PrecisionNumberConverter}"/>
+
+    <awc:StringToBoolConverter x:Key="{x:Static awr:Converters.StringToBoolConverter}"/>
+
     <awc:StringToMaskConverter x:Key="{x:Static awr:Converters.StringToMaskConverter}"/>
+
+    <awc:StringToVisibleConverter x:Key="{x:Static awr:Converters.StringToVisibleConverter}"/>
+    <awc:StringToHiddenConverter x:Key="{x:Static awr:Converters.StringToHiddenConverter}"/>
+    <awc:StringToCollapsedConverter x:Key="{x:Static awr:Converters.StringToCollapsedConverter}"/>
 
 </ResourceDictionary>
