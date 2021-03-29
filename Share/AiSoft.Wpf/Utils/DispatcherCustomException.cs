@@ -8,7 +8,7 @@ namespace AiSoft.Wpf.Utils
     /// <summary>
     /// 自定义错误类
     /// </summary>
-    public class CustomException
+    public class DispatcherCustomException
     {
         /// <summary>
         /// 处理UI线程中某个异常未被捕获时出现的异常

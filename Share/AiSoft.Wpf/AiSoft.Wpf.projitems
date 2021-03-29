@@ -9,10 +9,13 @@
     <Import_RootNamespace>AiSoft.Wpf</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)Utils\CustomException.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Utils\DispatcherCustomException.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\DispatcherHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\FrameworkHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\WinHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\WpfHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\FlashWindow.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\SoundPlay.cs" />
   </ItemGroup>
