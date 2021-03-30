@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/AiSoft.Wpf;component/Themes/SelectPathControl.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/AiSoft.Wpf;component/Themes/SelectPath.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
