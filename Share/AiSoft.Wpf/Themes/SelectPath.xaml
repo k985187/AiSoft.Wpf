@@ -7,10 +7,15 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type awc:SelectPath}">
-                    <DockPanel>
-                        <Button x:Name="SelectBtn" DockPanel.Dock="Right" Height="{TemplateBinding Height}" Content="..." Style="{TemplateBinding ButtonStyle}"/>
-                        <TextBox Text="{TemplateBinding Path}" IsReadOnlyCaretVisible="True" Height="{TemplateBinding Height}" Margin="0,0,5,0" MinWidth="80"/>
+                    <DockPanel Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                        <Button x:Name="SelectBtn" DockPanel.Dock="Right" Content="..." Style="{TemplateBinding ButtonStyle}"/>
+                        <TextBox Text="{TemplateBinding Path}" IsReadOnly="True" IsReadOnlyCaretVisible="True" Margin="0,0,5,0"/>
                     </DockPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ButtonStyle" Value="{x:Null}">
+                            <Setter TargetName="SelectBtn" Property="Style" Value="{StaticResource {x:Type Button}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

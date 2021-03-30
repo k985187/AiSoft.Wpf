@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Forms;
 using AiSoft.Wpf.Enums;
 using AiSoft.Wpf.Helpers;
+using Application = System.Windows.Application;
 using Button = System.Windows.Controls.Button;
 using Control = System.Windows.Controls.Control;
 
@@ -43,7 +44,7 @@ namespace AiSoft.Wpf.Controls
             set => SetValue(SelectPathModeProperty, value);
         }
 
-        public static readonly DependencyProperty ButtonStyleProperty = DependencyProperty.Register("ButtonStyle", typeof(Style), typeof(SelectPath), new PropertyMetadata((new Button()).Style));
+        public static readonly DependencyProperty ButtonStyleProperty = DependencyProperty.Register("ButtonStyle", typeof(Style), typeof(SelectPath), new PropertyMetadata(null));
 
         /// <summary>
         /// 按钮样式
@@ -52,6 +53,17 @@ namespace AiSoft.Wpf.Controls
         {
             get => (Style)GetValue(ButtonStyleProperty);
             set => SetValue(ButtonStyleProperty, value);
+        }
+
+        public static readonly DependencyProperty IsOwnerProperty = DependencyProperty.Register("IsOwner", typeof(bool), typeof(SelectPath), new PropertyMetadata(true));
+
+        /// <summary>
+        /// 是否设置所有者
+        /// </summary>
+        public bool IsOwner
+        {
+            get => (bool)GetValue(IsOwnerProperty);
+            set => SetValue(IsOwnerProperty, value);
         }
 
         static SelectPath()
@@ -88,9 +100,19 @@ namespace AiSoft.Wpf.Controls
         /// </summary>
         private void OpenSaveFileDialog()
         {
-            var dlg = new SaveFileDialog { Filter = Filter, FileName = Path };
-            var res = dlg.ShowDialog() == DialogResult.OK;
-            if (!res)
+            var dlg = new SaveFileDialog { Filter = Filter, FileName = Path, InitialDirectory = string.IsNullOrWhiteSpace(Path) ? AppDomain.CurrentDomain.BaseDirectory : Path };
+            DialogResult result;
+            if (IsOwner)
+            {
+                var winPtr = WpfHelper.GetHandleByDependencyObject(Application.Current.MainWindow);
+                var win = new WinFormWindow(winPtr);
+                result = dlg.ShowDialog(win);
+            }
+            else
+            {
+                result = dlg.ShowDialog();
+            }
+            if (result != DialogResult.OK)
             {
                 return;
             }
@@ -102,9 +124,19 @@ namespace AiSoft.Wpf.Controls
         /// </summary>
         private void OpenSelectFileDialog()
         {
-            var dlg = new OpenFileDialog { Filter = Filter, FileName = Path };
-            var res = dlg.ShowDialog() == DialogResult.OK;
-            if (!res)
+            var dlg = new OpenFileDialog { Filter = Filter, FileName = Path, InitialDirectory = string.IsNullOrWhiteSpace(Path) ? AppDomain.CurrentDomain.BaseDirectory : Path };
+            DialogResult result;
+            if (IsOwner)
+            {
+                var winPtr = WpfHelper.GetHandleByDependencyObject(Application.Current.MainWindow);
+                var win = new WinFormWindow(winPtr);
+                result = dlg.ShowDialog(win);
+            }
+            else
+            {
+                result = dlg.ShowDialog();
+            }
+            if (result != DialogResult.OK)
             {
                 return;
             }
@@ -117,12 +149,34 @@ namespace AiSoft.Wpf.Controls
         private void OpenSelectFolderDialog()
         {
             var dlg = new FolderBrowserDialog { SelectedPath = Path };
-            var res = dlg.ShowDialog() == DialogResult.OK;
-            if (!res)
+            DialogResult result;
+            if (IsOwner)
+            {
+                var winPtr = WpfHelper.GetHandleByDependencyObject(Application.Current.MainWindow);
+                var win = new WinFormWindow(winPtr);
+                result = dlg.ShowDialog(win);
+            }
+            else
+            {
+                result = dlg.ShowDialog();
+            }
+            if (result != DialogResult.OK)
             {
                 return;
             }
             Path = dlg.SelectedPath;
+        }
+    }
+
+    internal class WinFormWindow : IWin32Window
+    {
+        IntPtr _handle;
+
+        IntPtr IWin32Window.Handle => _handle;
+
+        public WinFormWindow(IntPtr handle)
+        {
+            _handle = handle;
         }
     }
 }
