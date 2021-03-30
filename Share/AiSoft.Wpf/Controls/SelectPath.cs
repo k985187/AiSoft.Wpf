@@ -7,7 +7,6 @@ using Control = System.Windows.Controls.Control;
 
 namespace AiSoft.Wpf.Controls
 {
-    [TemplatePart(Name = "SelectBtn", Type = typeof(Button))]
     public class SelectPath : Control
     {
         public static readonly DependencyProperty PathProperty = DependencyProperty.Register("Path", typeof(string), typeof(SelectPath), new PropertyMetadata(string.Empty));
@@ -43,6 +42,17 @@ namespace AiSoft.Wpf.Controls
             set => SetValue(SelectPathModeProperty, value);
         }
 
+        public static readonly DependencyProperty ButtonStyleProperty = DependencyProperty.Register("ButtonStyle", typeof(Style), typeof(SelectPath), new PropertyMetadata(null));
+
+        /// <summary>
+        /// 按钮样式
+        /// </summary>
+        public Style ButtonStyle
+        {
+            get => (Style)GetValue(ButtonStyleProperty);
+            set => SetValue(ButtonStyleProperty, value);
+        }
+
         static SelectPath()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SelectPath), new FrameworkPropertyMetadata(typeof(SelectPath)));
@@ -51,8 +61,7 @@ namespace AiSoft.Wpf.Controls
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            var btn = GetTemplateChild("SelectBtn") as Button;
-            if (btn != null)
+            if (FindName("SelectBtn") is Button btn)
             {
                 btn.Click += (s, e) =>
                 {

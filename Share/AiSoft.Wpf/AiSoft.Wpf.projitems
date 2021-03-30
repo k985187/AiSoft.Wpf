@@ -39,7 +39,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Themes\SelectPathControl.xaml">
+    <Page Include="$(MSBuildThisFileDirectory)Themes\SelectPath.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
