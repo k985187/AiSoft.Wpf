@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Forms;
 using AiSoft.Wpf.Enums;
@@ -11,15 +12,15 @@ namespace AiSoft.Wpf.Controls
 {
     public class SelectPath : Control
     {
-        public static readonly DependencyProperty PathProperty = DependencyProperty.Register("Path", typeof(string), typeof(SelectPath), new PropertyMetadata(string.Empty));
+        public static readonly DependencyProperty OpenPathProperty = DependencyProperty.Register("OpenPath", typeof(string), typeof(SelectPath), new PropertyMetadata(string.Empty));
         
         /// <summary>
         /// 选择的路径
         /// </summary>
-        public string Path
+        public string OpenPath
         {
-            get => (string)GetValue(PathProperty);
-            set => SetValue(PathProperty, value);
+            get => (string)GetValue(OpenPathProperty);
+            set => SetValue(OpenPathProperty, value);
         }
 
         public static readonly DependencyProperty FilterProperty = DependencyProperty.Register("Filter", typeof(string), typeof(SelectPath), new PropertyMetadata("All|*.*"));
@@ -100,7 +101,7 @@ namespace AiSoft.Wpf.Controls
         /// </summary>
         private void OpenSaveFileDialog()
         {
-            var dlg = new SaveFileDialog { Filter = Filter, FileName = Path, InitialDirectory = string.IsNullOrWhiteSpace(Path) ? AppDomain.CurrentDomain.BaseDirectory : Path };
+            var dlg = new SaveFileDialog { Filter = Filter, FileName = string.IsNullOrWhiteSpace(OpenPath) ? "" : Path.GetFileName(OpenPath), InitialDirectory = string.IsNullOrWhiteSpace(OpenPath) ? AppDomain.CurrentDomain.BaseDirectory : Path.GetDirectoryName(OpenPath) };
             DialogResult result;
             if (IsOwner)
             {
@@ -116,7 +117,7 @@ namespace AiSoft.Wpf.Controls
             {
                 return;
             }
-            Path = dlg.FileName;
+            OpenPath = dlg.FileName;
         }
 
         /// <summary>
@@ -124,7 +125,7 @@ namespace AiSoft.Wpf.Controls
         /// </summary>
         private void OpenSelectFileDialog()
         {
-            var dlg = new OpenFileDialog { Filter = Filter, FileName = Path, InitialDirectory = string.IsNullOrWhiteSpace(Path) ? AppDomain.CurrentDomain.BaseDirectory : Path };
+            var dlg = new OpenFileDialog { Filter = Filter, FileName = string.IsNullOrWhiteSpace(OpenPath) ? "" : Path.GetFileName(OpenPath), InitialDirectory = string.IsNullOrWhiteSpace(OpenPath) ? AppDomain.CurrentDomain.BaseDirectory : Path.GetDirectoryName(OpenPath) };
             DialogResult result;
             if (IsOwner)
             {
@@ -140,7 +141,7 @@ namespace AiSoft.Wpf.Controls
             {
                 return;
             }
-            Path = dlg.FileName;
+            OpenPath = dlg.FileName;
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace AiSoft.Wpf.Controls
         /// </summary>
         private void OpenSelectFolderDialog()
         {
-            var dlg = new FolderBrowserDialog { SelectedPath = Path };
+            var dlg = new FolderBrowserDialog { SelectedPath = string.IsNullOrWhiteSpace(OpenPath) ? "" : Path.GetDirectoryName(OpenPath) };
             DialogResult result;
             if (IsOwner)
             {
@@ -164,7 +165,7 @@ namespace AiSoft.Wpf.Controls
             {
                 return;
             }
-            Path = dlg.SelectedPath;
+            OpenPath = dlg.SelectedPath;
         }
     }
 

@@ -9,7 +9,7 @@
                 <ControlTemplate TargetType="{x:Type awc:SelectPath}">
                     <DockPanel Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
                         <Button x:Name="SelectBtn" DockPanel.Dock="Right" Content="..." Style="{TemplateBinding ButtonStyle}"/>
-                        <TextBox Text="{TemplateBinding Path}" IsReadOnly="True" IsReadOnlyCaretVisible="True" Margin="0,0,5,0"/>
+                        <TextBox Text="{TemplateBinding OpenPath}" IsReadOnly="True" IsReadOnlyCaretVisible="True" Margin="0,0,5,0"/>
                     </DockPanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="ButtonStyle" Value="{x:Null}">
