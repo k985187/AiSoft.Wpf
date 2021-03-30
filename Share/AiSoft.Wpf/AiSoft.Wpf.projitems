@@ -9,12 +9,39 @@
     <Import_RootNamespace>AiSoft.Wpf</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SelectPath.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\EnumToDescriptionConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\InverseBooleanConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ObjectToBoolConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ObjectToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\PrecisionConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\PrecisionNumberConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StringToBoolConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StringToMaskConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StringToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\SelectPathModeEnum.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DispatcherHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\FrameworkHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\WinHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\WpfHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Resources\Converters.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\CustomException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\FlashWindow.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\SoundPlay.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Resources\Controls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Resources\Converters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Themes\SelectPathControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>
