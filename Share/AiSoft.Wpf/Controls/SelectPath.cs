@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Forms;
 using AiSoft.Wpf.Enums;
+using AiSoft.Wpf.Helpers;
 using Button = System.Windows.Controls.Button;
 using Control = System.Windows.Controls.Control;
 
@@ -42,7 +43,7 @@ namespace AiSoft.Wpf.Controls
             set => SetValue(SelectPathModeProperty, value);
         }
 
-        public static readonly DependencyProperty ButtonStyleProperty = DependencyProperty.Register("ButtonStyle", typeof(Style), typeof(SelectPath), new PropertyMetadata(null));
+        public static readonly DependencyProperty ButtonStyleProperty = DependencyProperty.Register("ButtonStyle", typeof(Style), typeof(SelectPath), new PropertyMetadata((new Button()).Style));
 
         /// <summary>
         /// 按钮样式
@@ -61,7 +62,8 @@ namespace AiSoft.Wpf.Controls
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            if (FindName("SelectBtn") is Button btn)
+            var btn = FrameworkHelper.GetChildObject<Button>(this, "SelectBtn");
+            if (btn != null)
             {
                 btn.Click += (s, e) =>
                 {
