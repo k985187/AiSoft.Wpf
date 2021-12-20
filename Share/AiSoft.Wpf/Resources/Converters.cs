@@ -35,5 +35,7 @@ namespace AiSoft.Wpf.Resources
         public const string StringToHiddenConverter = nameof(StringToHiddenConverter);
 
         public const string StringToCollapsedConverter = nameof(StringToCollapsedConverter);
+
+        public const string VisibilityToBoolConverter = nameof(VisibilityToBoolConverter);
     }
 }

@@ -20,6 +20,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Converters\StringToBoolConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\StringToMaskConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\StringToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\VisibilityToBoolConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\SelectPathModeEnum.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DispatcherHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\FrameworkHelper.cs" />
@@ -28,6 +29,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Converters.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\CustomException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\FlashWindow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\HiPerfTimer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\SoundPlay.cs" />
   </ItemGroup>
   <ItemGroup>

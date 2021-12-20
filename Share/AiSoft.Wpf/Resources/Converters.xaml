@@ -28,4 +28,6 @@
     <awc:StringToHiddenConverter x:Key="{x:Static awr:Converters.StringToHiddenConverter}"/>
     <awc:StringToCollapsedConverter x:Key="{x:Static awr:Converters.StringToCollapsedConverter}"/>
 
+    <awc:VisibilityToBoolConverter x:Key="{x:Static awr:Converters.VisibilityToBoolConverter}"/>
+
 </ResourceDictionary>
