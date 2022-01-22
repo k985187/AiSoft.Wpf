@@ -26,6 +26,8 @@ namespace AiSoft.Wpf.Resources
 
         public const string PrecisionNumberConverter = nameof(PrecisionNumberConverter);
 
+        public const string RateToBrushConverter = nameof(RateToBrushConverter);
+
         public const string StringToBoolConverter = nameof(StringToBoolConverter);
 
         public const string StringToMaskConverter = nameof(StringToMaskConverter);

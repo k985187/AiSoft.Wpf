@@ -17,6 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ObjectToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\PrecisionConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\PrecisionNumberConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\RateToBrushConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\StringToBoolConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\StringToMaskConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\StringToVisibilityConverter.cs" />
@@ -33,6 +34,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Utils\SoundPlay.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Resources\BaseStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Resources\Controls.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/AiSoft.Wpf;component/Resources/BaseStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/AiSoft.Wpf;component/Resources/Controls.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/AiSoft.Wpf;component/Resources/Converters.xaml"/>
     </ResourceDictionary.MergedDictionaries>

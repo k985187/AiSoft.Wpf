@@ -20,6 +20,8 @@
     <awc:PrecisionConverter x:Key="{x:Static awr:Converters.PrecisionConverter}"/>
     <awc:PrecisionNumberConverter x:Key="{x:Static awr:Converters.PrecisionNumberConverter}"/>
 
+    <awc:RateToBrushConverter x:Key="{x:Static awr:Converters.RateToBrushConverter}"/>
+
     <awc:StringToBoolConverter x:Key="{x:Static awr:Converters.StringToBoolConverter}"/>
 
     <awc:StringToMaskConverter x:Key="{x:Static awr:Converters.StringToMaskConverter}"/>
